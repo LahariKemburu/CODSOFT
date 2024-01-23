@@ -15,7 +15,7 @@
         <div class="keys">
             <div class="one">
                 <button onclick="cleardisplay('C')" id="clear">C</button>
-                <button onclick="appendToDisplay('X')">X</button>
+                <button onclick="cross('X')">X</button>
                 <button onclick="appendToDisplay('%')">%</button>
                 <button onclick="appendToDisplay('/')">/</button>
             </div>
@@ -63,5 +63,11 @@
     } catch (error) {
       document.getElementById('display').value='Error';
     }
+  }
+    function cross(){
+    let display = document.getElementById('display');
+    let currentValue = display.value;
+    let newValue = currentValue.slice(0, -1);
+    display.value = newValue;
   }
 </script>
