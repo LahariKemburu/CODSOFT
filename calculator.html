@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung-Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body class="body">
+    <div class="container">
+        <div class="space">
+            <input type="text" id="display">
+        </div>
+
+        <div class="keys">
+            <div class="one">
+                <button onclick="cleardisplay('C')" id="clear">C</button>
+                <button onclick="appendToDisplay('X')">X</button>
+                <button onclick="appendToDisplay('%')">%</button>
+                <button onclick="appendToDisplay('/')">/</button>
+            </div>
+            <div class="four">
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('*')">*</button>
+            </div>
+            <div class="seven">
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')">-</button>
+            </div>
+            <div class="zero">
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('+')">+</button>
+            </div>
+            <div class="zero">
+                <button onclick="appendToDisplay('0')" >0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculate('=')" id="zerobtn">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+  function appendToDisplay(value) {
+    let display = document.getElementById('display');
+    display.value+= value;
+  }
+  function cleardisplay()
+  {
+    document.getElementById('display').value='';
+  }
+  function calculate() {
+    try {
+      var x = eval(document.getElementById('display').value);
+      document.getElementById('display').value=x;
+    } catch (error) {
+      document.getElementById('display').value='Error';
+    }
+  }
+</script>
